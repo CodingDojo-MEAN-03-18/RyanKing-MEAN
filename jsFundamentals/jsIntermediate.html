@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Intermediate</title>
+        <script>
+            function starString(n) {
+                let x = '';
+                for (let i = 0; i < n; i++) {
+                    x = x.concat('*');  //add one * each time the loop runs
+                }
+                return x;
+            }
+
+            function drawStars(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    // console.log(starString(arr[i]));  //for each element, pass the element value into starString and print it
+                    if (typeof arr[i] === 'number') {
+                        console.log(starString(arr[i]));  //same as original (commented out above)
+                    }
+                    else if (typeof arr[i] === 'string') {
+                        let element = arr[i].toLowerCase();
+                        let letter = element.charAt(0); //set 'letter' to the first letter of the element
+                        let output = '';
+                        for (let i = 0; i < element.length; i++) {
+                            output = output.concat(letter); //add 'letter' once for each loop (based on length of the element)
+                        }
+                        console.log(output);
+                    }
+                }
+            }
+
+
+            console.log(starString(8));  //should print ********
+            drawStars([3, 5, 7]);  //should draw lines of 3, 5, and 7 stars
+            drawStars([3, "five", 7, "A string"]);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
