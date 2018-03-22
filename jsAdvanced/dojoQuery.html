@@ -1,0 +1,28 @@
+<html>
+<body>
+    <button id="btn_click">Click here!</button>
+    <button id="btn_hover">Hover here!</button>
+    <script>
+        (function() {
+            function $Dojo(id) {
+                this.element = document.getElementById(id);
+
+                this.click = function(callback) {
+                    this.element.addEventListener("click", callback);
+                }
+                this.hover = function(callbackHoverOn, callbackHoverOff) {
+                    this.element.addEventListener("mouseover", callbackHoverOn);
+                    this.element.addEventListener("mouseout", callbackHoverOff);
+                };
+                return this;
+            };
+            window.$Dojo = $Dojo;
+        })();
+
+        //test click and hover methods
+        $Dojo("btn_click").click(function() { console.log("The button was clicked!")});
+        $Dojo("btn_hover").hover(function() { console.log("Hovered over the button!")},
+                                  function() { console.log("Stopped hovering!")});
+    </script>
+</body>
+</html>
