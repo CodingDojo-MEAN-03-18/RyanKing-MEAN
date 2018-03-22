@@ -9,15 +9,22 @@
 			$("form").submit(function() {
 				var appID = "&APPID=33ae4a7a7f178bb4bbb51be6850983eb";
 				var city = $("#city").val();
-				console.log(city);
 				var url = "http://api.openweathermap.org/data/2.5/weather?q=" +city+ "&units=imperial" +appID;
-				$.get(url, function(response) {
-					$("#result").html(`
-						<h2>` +city+ `</h2>
-						<p>Temperature: ` +response.main.temp+ `</p>
-						`);
-				}, "json");
-				// console.log(response.main.temp); }, "json");
+				$.ajax({
+                    type:'GET',
+                    url:url,
+                    dataType:'json',
+                    success:success,
+                    error:error
+                });
+                function success(response) {
+                    $("#result").html(`
+                        <h2>City: ` + city + `</h2>
+                        <h2>Temperature: ` + response.main.temp + `</h2>`)
+                };
+                function error() {
+                    $("#result").html("<h2>City not found!</h2>");
+                };
 				return false;
 			});
 		});
