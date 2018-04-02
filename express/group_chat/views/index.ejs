@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Group Chat</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const socket = io.connect();
+            const name = prompt('Your name:');
+
+            socket.emit('new_user');
+            socket.on('get_chat', data => {
+                for(let i = 0; i < data.chat.length; i++) {
+                    $('#chat_box').append(data.chat[i].name + ':\t' + data.chat[i].message + '\n');
+                }
+            });
+            $('#send_msg').click(() => {
+                socket.emit('send_msg', {
+                    name: name,
+                    message: $('#user_msg').val()
+                });
+            });
+            socket.on('new_message', data => {
+                $('#chat_box').append(data.name + ':\t' + data.message + '\n');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Conversation Board</h2>
+    <textarea id="chat_box" cols="80" rows="50"></textarea><br>
+    <input type="text" id="user_msg" placeholder="enter your message here"><br>
+    <button id="send_msg">Send</button>
+</body>
+</html>
