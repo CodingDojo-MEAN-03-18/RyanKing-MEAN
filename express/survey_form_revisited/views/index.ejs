@@ -19,11 +19,11 @@
             });
             socket.on('updated_message', function(data) {
                 console.log('recieved data' + data.message);
-                $('#message').text(data.message);  // these jquery commands aren't working? blink but then disappear?
+                $('#message').html(data.message);  // these jquery commands aren't working? blink but then disappear?
             });
             socket.on('random_number', function(data) {
                 console.log(data.number);
-                $('#number').text("Your number emitted by the server is " + data.number);
+                $('#number').html("Your number emitted by the server is " + data.number);
             });
         });
     </script>
@@ -45,10 +45,7 @@
         <textarea name="comments" rows="8" cols="40" id="form_com"></textarea><br>
         <input type="submit" value="Submit">
     </form>
-    <div style="background-color:grey" id="results">
-        <p>test</p>
-        <p id="message"></p>
-        <p id="number"></p>
-    </div>
+    <div style="background-color:grey" id="message"></div>
+    <div style="background-color:grey" id="number"></div>
 </body>
 </html>
