@@ -14,11 +14,10 @@ var server = app.listen(8000, function() {
 });
 var io = require('socket.io').listen(server);
 
-io.sockets.on('connection', function(socket) {
+io.on('connection', socket => {
     console.log('client/socket is connected');
-    socket.on('posting_form', function(data) {
+    socket.on('posting_form', data => {
         console.log('recieved data: ' + data);
-        socket.emit('hello', {hello: 'hello'});
         socket.emit('updated_message', {message: "You emitted the following information to the server: " + data});
         socket.emit('random_number', {number: Math.floor(Math.random() * 1000) + 1});
     });
