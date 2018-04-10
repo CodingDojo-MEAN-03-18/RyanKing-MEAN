@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Owls</title>
+    </head>
+    <body>
+        <h2>All the owls!</h2>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </thead>
+            <% for (const owl of all_owls) { %>
+            <tr>
+                <td><%= owl.name %></td>
+                <td><%= owl.age %></td>
+                <td><%= owl.type %></td>
+                <td>
+                    <a href="/owls/<%= owl._id %>">Info</a>
+                    <a href="/owls/edit/<%= owl._id %>">Edit</a>
+                    <form action="/owls/destroy/<%= owl._id %>" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <hr>
+        <a href="/owls/new"><button>Add a new owl!</button></a>
+    </body>
+</html>
