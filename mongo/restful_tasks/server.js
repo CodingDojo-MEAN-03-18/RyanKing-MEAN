@@ -38,15 +38,6 @@ app.get('/tasks/:id', function(request, response) {
 });
 
 app.post('/tasks', function(request, response) {
-    // const task = new Task(request.body);
-    // task.save(err => {
-    //     if (err) {
-    //         console.log('error', err);
-    //     } else {
-    //         console.log('--task created!--');
-    //         response.redirect('/tasks');
-    //     }
-    // });
     Task.create(request.body)
         .then(task => {
             response.json({ message: "task created successfully!", data: task });
