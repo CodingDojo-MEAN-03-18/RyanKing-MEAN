@@ -1,0 +1,6 @@
+<h1>{{ title}} </h1>
+
+<div class="box" *ngFor="let button of buttons; let idx = index">
+  <button *ngIf="button" class="btnOn" (click)="onClick(idx)">ON</button>
+  <button *ngIf="!button" class="btnOff" (click)="onClick(idx)">OFF</button>
+</div>
