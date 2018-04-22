@@ -1,0 +1,30 @@
+<span style="font-size:24px;">Initial Power Level: </span>
+<form #powerData="ngForm">
+  <input type="number" name="power" min='1' max='100' value='1' required [(ngModel)]="power">
+  <input type="submit" value="Calculate Powers">
+</form><br>
+
+<fieldset>
+  <legend>HumanComponent</legend>
+  <app-display [power]="power" [multiplier]='1'></app-display>
+</fieldset>
+<fieldset>
+  <legend>SaiyanComponent</legend>
+  <app-display [power]="power" [multiplier]='10'></app-display>
+</fieldset>
+<fieldset>
+  <legend>SuperSaiyanComponent</legend>
+  <app-display [power]="power" [multiplier]='90'></app-display>
+</fieldset><br>
+<fieldset>
+  <legend>SuperSaiyanTwoComponent</legend>
+  <app-display [power]="power" [multiplier]='150'></app-display>
+</fieldset>
+<fieldset>
+  <legend>SuperSaiyanThreeComponent</legend>
+  <app-display [power]="power" [multiplier]='250'></app-display>
+</fieldset>
+<fieldset>
+  <legend>SuperSaiyanFourComponent</legend>
+  <app-display [power]="power" [multiplier]='500'></app-display>
+</fieldset>

@@ -1,0 +1,11 @@
+form {
+  display: inline;
+}
+
+fieldset {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  height: 150px;
+  margin-top: 25px;
+}
