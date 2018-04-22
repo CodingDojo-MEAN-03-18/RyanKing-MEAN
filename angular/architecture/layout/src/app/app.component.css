@@ -1,0 +1,18 @@
+div {
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: top;
+  margin: 10px;
+}
+
+#app {
+  width: 600px;
+}
+
+#alpha {
+  width: 250px;
+}
+
+#beta {
+  width: 250px;
+}
