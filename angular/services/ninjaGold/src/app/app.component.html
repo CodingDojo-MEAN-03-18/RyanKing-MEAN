@@ -1,0 +1,14 @@
+<div class='display'>
+    <h2>Gold Count: {{gold}}</h2>
+</div><br>
+
+<div class='actions'>
+  <app-actions (goldUpdater)="updateGold()" (logUpdater)="updateLog" [building]="'Farm'"></app-actions>
+  <app-actions (goldUpdater)="updateGold()" (logUpdater)="updateLog" [building]="'Cave'"></app-actions>
+  <app-actions (goldUpdater)="updateGold()" (logUpdater)="updateLog" [building]="'House'"></app-actions>
+  <app-actions (goldUpdater)="updateGold()" (logUpdater)="updateLog" [building]="'Casino'"></app-actions>
+</div><br>
+
+<div class='log'>
+  <app-activity-log></app-activity-log>
+</div>
