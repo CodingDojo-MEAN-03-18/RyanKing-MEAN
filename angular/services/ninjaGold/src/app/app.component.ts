@@ -14,6 +14,5 @@ export class AppComponent {
   }
   updateGold() {
     this.gold = this.dataService.getGold();
-    }
   }
 }

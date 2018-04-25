@@ -9,7 +9,6 @@ import { DataService } from '../data.service';
 export class ActionsComponent implements OnInit {
   @Input() building: string;
   @Output() goldUpdater = new EventEmitter();
-  @Output() logUpdater = new EventEmitter();
 
   message: string;
 
@@ -22,7 +21,6 @@ export class ActionsComponent implements OnInit {
   onClick(building: string) {
     this.dataService.earnGold(building);
     this.goldUpdater.emit();
-    this.logUpdater.emit();
   }
 
 }
