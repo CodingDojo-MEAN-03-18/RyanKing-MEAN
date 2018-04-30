@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { City } from './city';
 
 @Injectable()
 export class DataService {
@@ -10,8 +11,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getData(id: number): Observable<object> {
-    return this.http.get(this.url + id + this.tail);
+  getData(id: number): Observable<City> {
+    return this.http.get<City>(this.url + id + this.tail);
   }
 
 }
