@@ -1,0 +1,17 @@
+* {
+  margin: 10px;
+}
+
+div {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+}
+
+img {
+  height: 300px;
+}
+
+h2 {
+  text-align: center;
+}
