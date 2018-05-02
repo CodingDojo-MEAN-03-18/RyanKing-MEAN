@@ -1,3 +1,8 @@
-<p>
-  product-list works!
-</p>
+<h2>Product List</h2>
+<div *ngFor='let product of all_products; let idx = index'>
+  <h4>Product #{{ idx + 1 }} - {{ product.title }}</h4>
+  <h4>{{ product.price }}</h4>
+  <img *ngIf='product.image' src='{{product.image}}'><br>
+  <a [routerLink]="[idx, 'edit']"><button>Edit</button></a><br>
+  <button (click)='deleteProduct(idx)'>Delete</button>
+</div>

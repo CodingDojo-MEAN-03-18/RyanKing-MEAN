@@ -1,3 +1,8 @@
-<p>
-  product-edit works!
-</p>
+<h2>Edit Product #{{ id + 1 }}</h2>
+<form (submit)="onSubmit($event)" #productForm="ngForm">
+  Title: <input type="text" name="title" [(ngModel)]="product.title" #title="ngModel" required minlength="4"><br>
+  Price: <input type="number" name="price" [(ngModel)]="product.price" #price="ngModel" required><br>
+  Image URL: <input type="text" name="image" [(ngModel)]="product.image" #image="ngModel"><br>
+  <input type="submit" value="Edit" [disabled]="productForm.invalid">
+  <button (click)='deleteProduct(id)'>Delete</button>
+</form>
