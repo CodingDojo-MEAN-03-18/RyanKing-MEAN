@@ -1,0 +1,6 @@
+<div id="list-container">
+  <div class="note" *ngFor="let note of all_notes">
+    <p class="right">Noted on: {{ note.createdAt | date:'medium' }}</p>
+    <p class="content">{{ note.content }}</p>
+  </div>
+</div>

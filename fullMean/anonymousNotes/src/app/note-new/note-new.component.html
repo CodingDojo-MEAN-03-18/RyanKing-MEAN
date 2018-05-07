@@ -1,0 +1,7 @@
+<div class="note-new">
+  <form (submit)="onSubmit(noteForm)" #noteForm="ngForm">
+    Note:
+    <input type="text" name="content" size="60" [(ngModel)]='note'>
+    <input type="submit" value="Add Note">
+  </form>
+</div>
