@@ -1,0 +1,23 @@
+* {
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+div {
+  border: 1px solid black;
+}
+
+.playing {
+  background-color: green;
+  color: white;
+}
+
+.not-playing {
+  background-color: red;
+  color: white;
+}
+
+.undecided {
+  background-color: yellow;
+}

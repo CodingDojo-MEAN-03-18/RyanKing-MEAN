@@ -1,0 +1,18 @@
+* {
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+div {
+  border: 1px solid black;
+}
+
+button {
+  background-color: green;
+  color: white;
+}
+
+.red {
+  color: red;
+}
